@@ -1,4 +1,4 @@
-import os
+import os, re
 from instagrapi import Client
 from instagrapi.types import StoryMention, StoryMedia, StoryLink, StoryHashtag
 from db import Session, Reel, ReelEncoder
@@ -12,6 +12,25 @@ import logging
 logging.getLogger("moviepy").setLevel(logging.ERROR)
 
 from helpers import print
+
+def balance_hashtags(caption):
+   hashtags = re.findall(r"#\w+", caption)
+   num_needed = 29 - len(hashtags)
+
+   if num_needed <= 0:
+       return caption
+   additional_hashtags = Helper.get_config('HASTAGS')
+   balanced_caption = ""
+   for word in caption.split():
+       balanced_caption += word + " "
+       if num_needed > 0:
+           balanced_caption += additional_hashtags[num_needed - 1] + " "
+           num_needed -= 1
+   return balanced_caption.strip()
+
+def balance_and_replace(caption):
+    caption = re.sub(r"@\w+", "@lethal_astra", caption)
+    return caption
 
 # Trim Video for story
 def trim_video(file_path, output_path, max_duration=15):
@@ -67,11 +86,12 @@ def main(api):
     Helper.load_all_config()
     try:
         reel = get_reel()
+        caption = balance_and_replace(reel.caption)
         if os.path.exists(reel.file_path):
             api.delay_range = [1, 3]
             media = api.clip_upload(
                 reel.file_path,
-                Helper.get_config('HASTAGS'), #Caption
+                caption, #Caption
                 extra_data={
                     # "custom_accessibility_caption": "alt text example",
                     "like_and_view_counts_disabled": config.LIKE_AND_VIEW_COUNTS_DISABLED,

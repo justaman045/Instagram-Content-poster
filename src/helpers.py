@@ -76,17 +76,16 @@ def save_config(key,value) :
 def make_my_information() -> Panel:
     sponsor_message = Table.grid(padding=0)
     sponsor_message.add_column(style="green", justify="center")
-    sponsor_message.add_row("[red]▄▀█ █░█ █ █▄░█ ▄▀█ █▀ █░█   █▀█ ▄▀█ ▀█▀ █░█ █▀█ █▀▄[/red]")
-    sponsor_message.add_row("[red]█▀█ ▀▄▀ █ █░▀█ █▀█ ▄█ █▀█   █▀▄ █▀█ ░█░ █▀█ █▄█ █▄▀[/red]")
+    sponsor_message.add_row("[red]{ Aman }[/red]")
     
     sponsor_message.add_row("")
     sponsor_message.add_row("I'm a highly motivated and dedicated developer, open-source contributor, and a never-ending learner with a strong passion for cutting-edge technologies and innovative solutions. I thoroughly enjoy collaborating with others to create outstanding products and contribute to the tech community.")
     sponsor_message.add_row("")
-    sponsor_message.add_row("[u bright_blue link=https://github.com/Avnsh1111/]Github : https://github.com/Avnsh1111/")
+    sponsor_message.add_row("[u bright_blue link=https://github.com/justaman045/]Github : https://github.com/justaman045/")
     sponsor_message.add_row("")
-    sponsor_message.add_row("[u bright_blue link=https://twitter.com/joy_7383/]Twitter : https://twitter.com/joy_7383/")
+    sponsor_message.add_row("[u bright_blue link=https://twitter.com/justaman045/]Twitter : https://twitter.com/justaman045/")
     sponsor_message.add_row("")
-    sponsor_message.add_row("[u bright_blue link=https://instagram.com/avnshrathod/]Instagram : https://twitter.com/avnshrathod/")
+    sponsor_message.add_row("[u bright_blue link=https://instagram.com/justaman045/]Instagram : https://twitter.com/justaman045/")
     sponsor_message.add_row("")
     message_panel = Panel(
         Align.center(
@@ -104,12 +103,11 @@ def make_my_information() -> Panel:
 def make_sponsor_message() -> Panel:
     sponsor_message = Table.grid(padding=0)
     sponsor_message.add_column(style="green", justify="center")
-    sponsor_message.add_row("[blue] █▀█ █▀▀ █▀▀ █░░ █▀ ▄▄ ▄▀█ █░█ ▀█▀ █▀█ █▀█ █ █░░ █▀█ ▀█▀[/blue]")
-    sponsor_message.add_row("[blue] █▀▄ ██▄ ██▄ █▄▄ ▄█ ░░ █▀█ █▄█ ░█░ █▄█ █▀▀ █ █▄▄ █▄█ ░█░[/blue]")
+    sponsor_message.add_row("[blue] { Aman }[/blue]")
     sponsor_message.add_row("")
     sponsor_message.add_row("Reels-AutoPilot is a powerful GitHub repository that scrapes reels from specified Instagram accounts and shorts from YouTube channels, and automatically posts them to your Instagram account. Keep up with the latest content from your favorite creators and effortlessly share it with your followers. Enhance your Instagram presence and grow your account with Reels-AutoPilot!")
     sponsor_message.add_row("")
-    sponsor_message.add_row("[u bright_blue link=https://github.com/Avnsh1111/Instagram-Reels-Scraper-Auto-Poster]Github : https://github.com/Avnsh1111/Instagram-Reels-Scraper-Auto-Poster")
+    sponsor_message.add_row("[u bright_blue link=https://github.com/justaman045/Instagram-Content-poster]Github : https://github.com/justaman045/Instagram-Content-poster")
 
     message_panel = Panel(
         Align.center(
